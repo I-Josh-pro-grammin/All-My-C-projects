@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main (){
+  char letter = 'a';
+  while (letter <= 'z'){
+  printf("%c\n", letter);
+  letter++;
+  }
+  return 0;
+  return 0;
+}
