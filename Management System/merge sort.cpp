@@ -1,33 +1,38 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-void merge(vector<int>& arr, int left, int mid, int right) {
-  int n1 = mid - left+1;
-  int n2 = right - mid;
+int mergeParts(int arr[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
 
-  vector<int> R(n1), L(n2);
+    int L[n1];
+    int R[n2];
 
-  for(int i=0; i<n1; i++) {
-    L[i] = arr[left + 1];
-  }
+    // Copy data
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
 
-  for(int i=0; i<n2; i++) {
-    R[i] = arr[mid + 1 + j];
-  }
+    for (int i = 0; i < n2; i++)
+        R[i] = arr[m + 1 + i];
 
-  int i = 0;
-  int j = 0;
-  int k = left;
+    // Print for debugging
+    cout << "Left array: ";
+    for (int x : L) cout << x << " ";
+    cout << endl;
 
-  while(i <= n1 && j <= n2) {
-     if(L[i] <= R[i]) arr[i] = L[i++];
-     else arr[i] = R[i++];
-  }
+    cout << "Right array: ";
+    for (int x : R) cout << x << " ";
+    cout << endl;
 
-
+    return 0;
 }
 
 int main() {
-  int
- }
+    int nums[] = {2, 3, 6, 10, 8, 5, 4};
+
+    mergeParts(nums, 0, sizeof(nums)/2, sizeof(nums)-1);
+
+
+    return 0;
+}
